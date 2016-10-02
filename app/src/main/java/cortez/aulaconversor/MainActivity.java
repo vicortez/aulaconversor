@@ -1,5 +1,6 @@
 package cortez.aulaconversor;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -56,38 +57,48 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View v){
 
-        int op = v.getId();
-        if (op == findViewById(R.id.button1).getId()) {
-            System.out.println("heloo");
+        switch(v.getId()) {
+            case R.id.button1:
+                int op = v.getId();
+                if (op == findViewById(R.id.button1).getId()) {
+                    System.out.println("heloo");
 
-            if (temp.getText().length() == 0) {
-                Toast t = Toast.makeText(this, "Entre com um numero valido",
-                        Toast.LENGTH_LONG);
-                t.show();
-                return;
-            }
+                    if (temp.getText().length() == 0) {
+                        Toast t = Toast.makeText(this, "Entre com um numero valido",
+                                Toast.LENGTH_LONG);
+                        t.show();
+                        return;
+                    }
 
 
-            float value = Float.parseFloat(temp.getText().toString());
-            float conv = 0.0f;
-            String resul;
-            if (cel.isChecked()) {
-                conv = toFah(value);
-                resul = String.valueOf(conv);
-                temp.setText(resul);
-                cel.setChecked(false);
-                fah.setChecked(true);
-            } else if (fah.isChecked()) {
-                conv = toCel(value);
-                resul = String.valueOf(conv);
-                temp.setText(resul);
-                fah.setChecked(false);
-                cel.setChecked(true);
-            } else {
-                //cria uma telinha quadrada cinza que aparece no canto da tela, usado para dar avisos
-                Toast t = Toast.makeText(this, "selecione um", Toast.LENGTH_LONG);
-                t.show();
-            }
+                    float value = Float.parseFloat(temp.getText().toString());
+                    float conv = 0.0f;
+                    String resul;
+                    if (cel.isChecked()) {
+                        conv = toFah(value);
+                        resul = String.valueOf(conv);
+                        temp.setText(resul);
+                        cel.setChecked(false);
+                        fah.setChecked(true);
+                    } else if (fah.isChecked()) {
+                        conv = toCel(value);
+                        resul = String.valueOf(conv);
+                        temp.setText(resul);
+                        fah.setChecked(false);
+                        cel.setChecked(true);
+                    } else {
+                        //cria uma telinha quadrada cinza que aparece no canto da tela, usado para dar avisos
+                        Toast t = Toast.makeText(this, "selecione um", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+                }
+                break;
+//            case R.id.botaoinicial:
+//                Intent com1 = new Intent(this,MainActivity.class);
+//                com1.putExtra("mensagem1", "Chamando a activity 1");
+//                com1.putExtra("mensagem2", "Chamando a activity 2");
+//                startActivity(com1);
+//                break;
         }
     }
 
