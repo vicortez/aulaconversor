@@ -93,12 +93,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 break;
-//            case R.id.botaoinicial:
-//                Intent com1 = new Intent(this,MainActivity.class);
-//                com1.putExtra("mensagem1", "Chamando a activity 1");
-//                com1.putExtra("mensagem2", "Chamando a activity 2");
-//                startActivity(com1);
-//                break;
         }
     }
 
