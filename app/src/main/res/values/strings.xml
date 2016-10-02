@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">aulaconversor</string>
+    <string name="cel">Celcius</string>
+    <string name="fa">Farenheit</string>
+</resources>
